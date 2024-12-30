@@ -11,9 +11,11 @@
     <monastery id="m1">
       <name>Рилски манастир</name>
       <monastery-churches>
-        <church id="c1" />
-        <church id="c2" />
-        <church id="c3" />
+        <churches>
+          <church id="c1" />
+          <church id="c2" />
+          <church id="c3" />
+        </churches>
       </monastery-churches>
       <region id="r1" />
       <area-in-sq-meters>8800</area-in-sq-meters>
