@@ -9,7 +9,7 @@
             </head>
             <body>
                 <div class="container">
-                    <h1>List of Monasteries</h1>
+                    <h1>Манастири</h1>
                     <xsl:apply-templates select="catalog/monasteries/monastery" />
                 </div>
             </body>
@@ -22,20 +22,32 @@
                 <h4>
                     <xsl:value-of select="name" />
                 </h4>
+                <img class="picture">
+                    <xsl:attribute name="src">
+                        <xsl:value-of select="picture/@src" />
+                    </xsl:attribute>
+                    <xsl:attribute name="alt">
+                        <xsl:value-of select="name" />
+                    </xsl:attribute>
+                    </img>
             </div>
             <div class="column">
                 <ul>
                     <h4>Църкви:</h4>
-                    <xsl:for-each select="monastery-churches/monastery-church">
-                        <li>
-                            <p>
-                                <xsl:value-of
-                                    select="/catalog/churches/church[@id=current()/@church-id]/name" />
-                            </p>
-                        </li>
-                    </xsl:for-each>
+                    <xsl:apply-templates select="monastery-churches" />
                 </ul>
             </div>
         </div>
+    </xsl:template>
+
+    <xsl:template match="monastery-churches">
+        <xsl:for-each select="monastery-church">
+            <li>
+                <p>
+                    <xsl:value-of
+                        select="/catalog/churches/church[@id=current()/@church-id]/name" />
+                </p>
+            </li>
+        </xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>

@@ -19,14 +19,27 @@ body {
   display: flex;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .two-column-container .column {
-  flex: 1; /* Each column takes up equal space */
+  flex: 1;
   padding: 10px;
   text-align: left;
 }
 
 .two-column-container .column:first-child {
   padding-left: 30px;
+}
+
+.two-column-container .column h4 {
+  margin-left: 18%;
+}
+
+.picture {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-left: 0px;
 }

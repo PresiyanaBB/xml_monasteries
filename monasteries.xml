@@ -41,7 +41,7 @@
     манастир-->
     <monastery id="m3">
       <name>Троянски манастир</name>
-      <picture src="images/troyanski.jpg" />
+      <picture src="images/troqnski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c7" />
       </monastery-churches>
@@ -99,7 +99,7 @@
     манастир-->
     <monastery id="m7">
       <name>Гложенски манастир</name>
-      <picture src="images/glozhenski.jpg" />
+      <picture src="images/glojenski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c13" />
       </monastery-churches>
