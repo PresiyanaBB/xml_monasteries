@@ -10,22 +10,32 @@
             <body>
                 <div class="container">
                     <h1>List of Monasteries</h1>
-                    <xsl:apply-templates />
+                    <xsl:apply-templates select="catalog/monasteries/monastery" />
                 </div>
             </body>
         </html>
     </xsl:template>
 
-    <!-- Template to match the root element -->
-    <xsl:template match="catalog">
-        <xsl:apply-templates select="monastery" />
-    </xsl:template>
-    <!-- Template to match monastery elements -->
     <xsl:template match="monastery">
-        <div class="container">
-            <h2>
-                <xsl:value-of select="name" />
-            </h2>
+        <div class="two-column-container">
+            <div class="column">
+                <h4>
+                    <xsl:value-of select="name" />
+                </h4>
+            </div>
+            <div class="column">
+                <ul>
+                    <h4>Църкви:</h4>
+                    <xsl:for-each select="monastery-churches/monastery-church">
+                        <li>
+                            <p>
+                                <xsl:value-of
+                                    select="/catalog/churches/church[@id=current()/@church-id]/name" />
+                            </p>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </div>
         </div>
     </xsl:template>
 </xsl:stylesheet>
