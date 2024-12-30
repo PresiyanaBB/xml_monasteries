@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Simple Type for Positive Integers -->
+    <xs:simpleType name="PositiveInteger">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex Type for Region -->
+    <xs:complexType name="RegionType">
+        <xs:sequence>
+            <xs:element name="Id" type="xs:int" />
+            <xs:element name="Name" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex Type for Monastery -->
+    <xs:complexType name="MonasteryType">
+        <xs:sequence>
+            <xs:element name="Id" type="xs:int" />
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="RegionId" type="xs:int" />
+            <xs:element name="SizeInSqMeters" type="PositiveInteger" />
+            <xs:element name="PropertiesCount" type="PositiveInteger" />
+            <xs:element name="RoomsForGuests" type="PositiveInteger" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex Type for Church -->
+    <xs:complexType name="ChurchType">
+        <xs:sequence>
+            <xs:element name="Id" type="xs:int" />
+            <xs:element name="MonasteryId" type="xs:int" />
+            <xs:element name="Name" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Define the Catalog element -->
+    <xs:element name="Catalog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Monasteries">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Monastery" maxOccurs="unbounded" type="MonasteryType" />
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:key name="MonasteryKey">
+                        <xs:selector xpath="Monastery" />
+                        <xs:field xpath="Id" />
+                    </xs:key>
+                </xs:element>
+
+                <xs:element name="Churches">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Church" maxOccurs="unbounded" type="ChurchType" />
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:key name="ChurchKey">
+                        <xs:selector xpath="Church" />
+                        <xs:field xpath="Id" />
+                    </xs:key>
+                </xs:element>
+
+                <xs:element name="Regions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Region" maxOccurs="unbounded" type="RegionType" />
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:key name="RegionKey">
+                        <xs:selector xpath="Region" />
+                        <xs:field xpath="Id" />
+                    </xs:key>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:keyref name="MonasteryRegionKeyRef" refer="RegionKey">
+            <xs:selector xpath="Catalog/Monasteries/Monastery" />
+            <xs:field xpath="RegionId" />
+        </xs:keyref>
+        <xs:keyref name="ChurchMonasteryKeyRef" refer="ChurchKey">
+            <xs:selector xpath="Catalog/Churches/Church" />
+            <xs:field xpath="MonasteryId" />
+        </xs:keyref>
+    </xs:element>
+</xs:schema>
