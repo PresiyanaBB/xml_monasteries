@@ -1,150 +1,204 @@
-<?xml-model href="monasteries.xsd"?>
-<Catalog>
-  <Monasteries>
-    <Monastery>
-      <Id>1</Id>
-      <Name>Рилски</Name>
-      <RegionId>1</RegionId>
-      <SizeInSqMeters>8800</SizeInSqMeters>
-      <PropertiesCount>120</PropertiesCount>
-      <RoomsForGuests>50</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>2</Id>
-      <Name>Бачковски</Name>
-      <RegionId>2</RegionId>
-      <SizeInSqMeters>8000</SizeInSqMeters>
-      <PropertiesCount>100</PropertiesCount>
-      <RoomsForGuests>20</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>3</Id>
-      <Name>Троянски</Name>
-      <RegionId>3</RegionId>
-      <SizeInSqMeters>4200</SizeInSqMeters>
-      <PropertiesCount>85</PropertiesCount>
-      <RoomsForGuests>15</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>4</Id>
-      <Name>Зографски</Name>
-      <RegionId>4</RegionId>
-      <SizeInSqMeters>12000</SizeInSqMeters>
-      <PropertiesCount>150</PropertiesCount>
-      <RoomsForGuests>20</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>5</Id>
-      <Name>Клисурски</Name>
-      <RegionId>5</RegionId>
-      <SizeInSqMeters>5000</SizeInSqMeters>
-      <PropertiesCount>50</PropertiesCount>
-      <RoomsForGuests>20</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>6</Id>
-      <Name>Черепиш</Name>
-      <RegionId>5</RegionId>
-      <SizeInSqMeters>4000</SizeInSqMeters>
-      <PropertiesCount>60</PropertiesCount>
-      <RoomsForGuests>15</RoomsForGuests>
-    </Monastery>
-    <Monastery>
-      <Id>7</Id>
-      <Name>Гложенски</Name>
-      <RegionId>3</RegionId>
-      <SizeInSqMeters>4000</SizeInSqMeters>
-      <PropertiesCount>40</PropertiesCount>
-      <RoomsForGuests>10</RoomsForGuests>
-    </Monastery>
-  </Monasteries>
-  <Churches>
-    <Church>
-      <Id>1</Id>
-      <MonasteryId>1</MonasteryId>
-      <Name>Рождество Богородично</Name>
-    </Church>
-    <Church>
-      <Id>2</Id>
-      <MonasteryId>1</MonasteryId>
-      <Name>Въведение Богородично</Name>
-    </Church>
-    <Church>
-      <Id>3</Id>
-      <MonasteryId>1</MonasteryId>
-      <Name>Свети Иван Рилски</Name>
-    </Church>
-    <Church>
-      <Id>4</Id>
-      <MonasteryId>2</MonasteryId>
-      <Name>Света Богородица</Name>
-    </Church>
-    <Church>
-      <Id>5</Id>
-      <MonasteryId>2</MonasteryId>
-      <Name>Свети Архангели</Name>
-    </Church>
-    <Church>
-      <Id>6</Id>
-      <MonasteryId>2</MonasteryId>
-      <Name>Свети Никола</Name>
-    </Church>
-    <Church>
-      <Id>7</Id>
-      <MonasteryId>3</MonasteryId>
-      <Name>Успение Богородично</Name>
-    </Church>
-    <Church>
-      <Id>8</Id>
-      <MonasteryId>4</MonasteryId>
-      <Name>Свети Георги</Name>
-    </Church>
-    <Church>
-      <Id>9</Id>
-      <MonasteryId>4</MonasteryId>
-      <Name>Свети Кирил и Методий</Name>
-    </Church>
-    <Church>
-      <Id>10</Id>
-      <MonasteryId>4</MonasteryId>
-      <Name>Успение Богородично</Name>
-    </Church>
-    <Church>
-      <Id>11</Id>
-      <MonasteryId>5</MonasteryId>
-      <Name>Свети Равноапостоли Кирил и Методий</Name>
-    </Church>
-    <Church>
-      <Id>12</Id>
-      <MonasteryId>6</MonasteryId>
-      <Name>Свети Георги</Name>
-    </Church>
-    <Church>
-      <Id>13</Id>
-      <MonasteryId>7</MonasteryId>
-      <Name>Свети Георги Победоносец</Name>
-    </Church>
-  </Churches>
-  <Regions>
-    <Region>
-      <Id>1</Id>
-      <Name>Кюстендил</Name>
-    </Region>
-    <Region>
-      <Id>2</Id>
-      <Name>Пловдив</Name>
-    </Region>
-    <Region>
-      <Id>3</Id>
-      <Name>Ловеч</Name>
-    </Region>
-    <Region>
-      <Id>4</Id>
-      <Name>на Атон, Гърция</Name>
-    </Region>
-    <Region>
-      <Id>5</Id>
-      <Name>Враца</Name>
-    </Region>
-  </Regions>
-</Catalog>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <?xml-stylesheet type = "text/xsl" href = "monasteries_test.xsd"?> -->
+
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:nonamespaceSchemaLocation="monasteries.xsd">
+
+  <!--Рилски
+  манастир-->
+  <monasteries>
+    <monastery id="m1">
+      <name>Рилски манастир</name>
+      <monastery-churches>
+        <church id="c1" />
+        <church id="c2" />
+        <church id="c3" />
+      </monastery-churches>
+      <region id="r1" />
+      <area-in-sq-meters>8800</area-in-sq-meters>
+      <properties-count>120</properties-count>
+      <rooms-for-guests>50</rooms-for-guests>
+    </monastery>
+
+    <!--Бачковски
+    манастир-->
+    <monastery id="m2">
+      <name>Бачковски манастир</name>
+      <monastery-churches>
+        <church id="c4" />
+        <church id="c5" />
+        <church id="c6" />
+      </monastery-churches>
+      <region id="r2" />
+      <area-in-sq-meters>8000</area-in-sq-meters>
+      <properties-count>100</properties-count>
+      <rooms-for-guests>20</rooms-for-guests>
+    </monastery>
+
+    <!--Троянски
+    манастир-->
+    <monastery id="m3">
+      <name>Троянски манастир</name>
+      <monastery-churches>
+        <church id="c7" />
+      </monastery-churches>
+      <region id="r3" />
+      <area-in-sq-meters>4200</area-in-sq-meters>
+      <properties-count>85</properties-count>
+      <rooms-for-guests>15</rooms-for-guests>
+    </monastery>
+
+    <!--Зографски
+    манастир-->
+    <monastery id="m4">
+      <name>Зографски манастир</name>
+      <monastery-churches>
+        <church id="c8" />
+        <church id="c9" />
+        <church id="c10" />
+      </monastery-churches>
+      <region id="r4" />
+      <area-in-sq-meters>12000</area-in-sq-meters>
+      <properties-count>150</properties-count>
+      <rooms-for-guests>20</rooms-for-guests>
+    </monastery>
+
+    <!--Клисурски
+    манастир-->
+    <monastery id="m5">
+      <name>Клисурски манастир</name>
+      <monastery-churches>
+        <church id="c11" />
+      </monastery-churches>
+      <region id="r5" />
+      <area-in-sq-meters>5000</area-in-sq-meters>
+      <properties-count>50</properties-count>
+      <rooms-for-guests>20</rooms-for-guests>
+    </monastery>
+
+    <!--Черепишки
+    манастир-->
+    <monastery id="m6">
+      <name>Черепишки манастир</name>
+      <monastery-churches>
+        <church id="c12" />
+      </monastery-churches>
+      <region id="r5" />
+      <area-in-sq-meters>4000</area-in-sq-meters>
+      <properties-count>60</properties-count>
+      <rooms-for-guests>15</rooms-for-guests>
+    </monastery>
+
+    <!--Гложенски
+    манастир-->
+    <monastery id="m7">
+      <name>Гложенски манастир</name>
+      <monastery-churches>
+        <church id="c13" />
+      </monastery-churches>
+      <region id="r3" />
+      <area-in-sq-meters>4000</area-in-sq-meters>
+      <properties-count>40</properties-count>
+      <rooms-for-guests>10</rooms-for-guests>
+    </monastery>
+
+  </monasteries>
+
+  <churches>
+    <church id="c1" monastery_id="m1">
+      <name>
+        "Рождество Богородично"
+      </name>
+    </church>
+    <church id="c2" monastery_id="m1">
+      <name>
+        "Въведение Богородично"
+      </name>
+    </church>
+    <church id="c3" monastery_id="m1">
+      <name>
+        "Свети Иван Рилски"
+      </name>
+    </church>
+    <church id="c4" monastery_id="m2">
+      <name>
+        "Света Богородица"
+      </name>
+    </church>
+    <church id="c5" monastery_id="m2">
+      <name>
+        "Свети Архангели"
+      </name>
+    </church>
+    <church id="c6" monastery_id="m2">
+      <name>
+        "Свети Никола"
+      </name>
+    </church>
+    <church id="c7" monastery_id="m3">
+      <name>
+        "Успение Богородично"
+      </name>
+    </church>
+    <church id="c8" monastery_id="m4">
+      <name>
+        "Свети Георги"
+      </name>
+    </church>
+    <church id="c9" monastery_id="m4">
+      <name>
+        "Свети Кирил и Методий"
+      </name>
+    </church>
+    <church id="c10" monastery_id="m4">
+      <name>
+        "Успение Богородично"
+      </name>
+    </church>
+    <church id="c11" monastery_id="m5">
+      <name>
+        "Свети Равноапостоли Кирил и Методий"
+      </name>
+    </church>
+    <church id="c12" monastery_id="m6">
+      <name>
+        "Свети Георги"
+      </name>
+    </church>
+    <church id="c13" monastery_id="m7">
+      <name>
+        "Свети Георги Победоносец"
+      </name>
+    </church>
+  </churches>
+
+  <regions>
+    <region id="1">
+      <name>
+        "Кюстендил"
+      </name>
+    </region>
+    <region id="2">
+      <name>
+        "Пловдив"
+      </name>
+    </region>
+    <region id="3">
+      <name>
+        "Ловеч"
+      </name>
+    </region>
+    <region id="4">
+      <name>
+        "Атон, Гърция"
+      </name>
+    </region>
+    <region id="5">
+      <name>
+        "Враца"
+      </name>
+    </region>
+  </regions>
+
+</catalog>
