@@ -8,9 +8,13 @@
                 <link rel="stylesheet" type="text/css" href="monasteries.css" />
             </head>
             <body>
-                <div class="container">
+                <header>
                     <h1>Манастири</h1>
-                    <xsl:apply-templates select="catalog/monasteries/monastery" />
+                </header>
+                <div class="page-container">
+                    <div class="container">
+                        <xsl:apply-templates select="catalog/monasteries/monastery" />
+                    </div>
                 </div>
             </body>
         </html>
@@ -22,16 +26,13 @@
                 <h4>
                     <xsl:value-of select="name" />
                 </h4>
-                <img class="picture">
-                    <xsl:attribute name="src">
-                        <xsl:value-of select="picture/@src" />
-                    </xsl:attribute>
-                    <xsl:attribute name="alt">
-                        <xsl:value-of select="name" />
-                    </xsl:attribute>
-                    </img>
+                <xsl:apply-templates select="picture" />
             </div>
             <div class="column">
+                <xsl:apply-templates select="area-in-sq-meters" />
+                <xsl:apply-templates select="properties-count" />
+                <xsl:apply-templates select="rooms-for-guests" />
+                <xsl:apply-templates select="monastery-region" />
                 <ul>
                     <h4>Църкви:</h4>
                     <xsl:apply-templates select="monastery-churches" />
@@ -49,5 +50,33 @@
                 </p>
             </li>
         </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template match="monastery-region">
+        <p> Намира се около: <xsl:value-of
+                select="/catalog/regions/region[@id=current()/@region-id]/name" />
+        </p>
+    </xsl:template>
+
+    <xsl:template match="picture">
+        <img class="picture">
+            <xsl:attribute name="src">
+                <xsl:value-of select="@src" />
+            </xsl:attribute>
+            <xsl:attribute name="alt">
+                <xsl:value-of select="name" />
+            </xsl:attribute>
+        </img>
+    </xsl:template>
+    <xsl:template match="area-in-sq-meters">
+        <p>Площ: <xsl:value-of select="." /> кв.м.</p>
+    </xsl:template>
+    <xsl:template match="properties-count">
+        <p>Брой имоти: <xsl:value-of select="." />
+        </p>
+    </xsl:template>
+    <xsl:template match="rooms-for-guests">
+        <p>Брой стаи за гости: <xsl:value-of select="." />
+        </p>
     </xsl:template>
 </xsl:stylesheet>

@@ -182,27 +182,27 @@
   <regions>
     <region id="r1">
       <name>
-        "Кюстендил"
+        Кюстендил
       </name>
     </region>
     <region id="r2">
       <name>
-        "Пловдив"
+        Пловдив
       </name>
     </region>
     <region id="r3">
       <name>
-        "Ловеч"
+        Ловеч
       </name>
     </region>
     <region id="r4">
       <name>
-        "Атон, Гърция"
+        Атон, Гърция
       </name>
     </region>
     <region id="r5">
       <name>
-        "Враца"
+        Враца
       </name>
     </region>
   </regions>
