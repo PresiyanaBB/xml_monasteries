@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xs1="http://www.w3.org/2001/XMLSchema-instance">
 
     <!-- Simple Type for Positive Integers -->
     <xs:simpleType name="PositiveInteger">
@@ -47,10 +48,6 @@
                             <xs:element name="Monastery" maxOccurs="unbounded" type="MonasteryType" />
                         </xs:sequence>
                     </xs:complexType>
-                    <xs:key name="MonasteryKey">
-                        <xs:selector xpath="Monastery" />
-                        <xs:field xpath="Id" />
-                    </xs:key>
                 </xs:element>
 
                 <xs:element name="Churches">
@@ -59,10 +56,6 @@
                             <xs:element name="Church" maxOccurs="unbounded" type="ChurchType" />
                         </xs:sequence>
                     </xs:complexType>
-                    <xs:key name="ChurchKey">
-                        <xs:selector xpath="Church" />
-                        <xs:field xpath="Id" />
-                    </xs:key>
                 </xs:element>
 
                 <xs:element name="Regions">
@@ -71,19 +64,28 @@
                             <xs:element name="Region" maxOccurs="unbounded" type="RegionType" />
                         </xs:sequence>
                     </xs:complexType>
-                    <xs:key name="RegionKey">
-                        <xs:selector xpath="Region" />
-                        <xs:field xpath="Id" />
-                    </xs:key>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+
+        <!-- Define Keys for Referential Integrity -->
+        <xs:key name="MonasteryKey">
+            <xs:selector xpath="Monasteries/Monastery" />
+            <xs:field xpath="Id" />
+        </xs:key>
+
+        <xs:key name="RegionKey">
+            <xs:selector xpath="Regions/Region" />
+            <xs:field xpath="Id" />
+        </xs:key>
+
         <xs:keyref name="MonasteryRegionKeyRef" refer="RegionKey">
-            <xs:selector xpath="Catalog/Monasteries/Monastery" />
+            <xs:selector xpath="Monasteries/Monastery" />
             <xs:field xpath="RegionId" />
         </xs:keyref>
-        <xs:keyref name="ChurchMonasteryKeyRef" refer="ChurchKey">
-            <xs:selector xpath="Catalog/Churches/Church" />
+
+        <xs:keyref name="ChurchMonasteryKeyRef" refer="MonasteryKey">
+            <xs:selector xpath="Churches/Church" />
             <xs:field xpath="MonasteryId" />
         </xs:keyref>
     </xs:element>
