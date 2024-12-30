@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "name": "Рилски",
+        "region": "Кюстендил",
+        "churches": [
+            {
+                "name": "Рождество Богородично"
+            },
+            {
+                "name": "Въведение Богородично"
+            },
+            {
+                "name": "Свети Иван Рилски"
+            }
+        ],
+        "size_in_sq_meters": 8800,
+        "properties_count": 120,
+        "rooms_for_guests": 50
+    },
+    {
+        "id": 2,
+        "name": "Бачковски",
+        "region": "Пловдив",
+        "churches": [
+            {
+                "name": "Света Богородица"
+            },
+            {
+                "name": "Свети Архангели"
+            },
+            {
+                "name": "Свети Никола"
+            }
+        ],
+        "size_in_sq_meters": 8000,
+        "properties_count": 100,
+        "rooms_for_guests": 20
+    },
+    {
+        "id": 3,
+        "name": "Троянски",
+        "region": "Ловеч",
+        "churches": [
+            {
+                "name": "Успение Богородично"
+            }
+        ],
+        "size_in_sq_meters": 4200,
+        "properties_count": 85,
+        "rooms_for_guests": 15
+    },
+    {
+        "id": 4,
+        "name": "Зографски",
+        "region": "на Атон, Гърция",
+        "churches": [
+            {
+                "name": "Свети Георги"
+            },
+            {
+                "name": "Свети Кирил и Методий"
+            },
+            {
+                "name": "Успение Богородично"
+            }
+        ],
+        "size_in_sq_meters": 12000,
+        "properties_count": 150,
+        "rooms_for_guests": 20
+    },
+    {
+        "id": 5,
+        "name": "Клисурски",
+        "region": "Враца",
+        "churches": [
+            {
+                "name": "Свети Равноапостоли Кирил и Методий"
+            }
+        ],
+        "size_in_sq_meters": 5000,
+        "properties_count": 50,
+        "rooms_for_guests": 20
+    },
+    {
+        "id": 6,
+        "name": "Черепиш",
+        "region": "Враца",
+        "churches": [
+            {
+                "name": "Свети Георги"
+            }
+        ],
+        "size_in_sq_meters": 4000,
+        "properties_count": 60,
+        "rooms_for_guests": 15
+    },
+    {
+        "id": 7,
+        "name": "Гложенски",
+        "region": "Ловеч",
+        "churches": [
+            {
+                "name": "Свети Георги Победоносец"
+            }
+        ],
+        "size_in_sq_meters": 4000,
+        "properties_count": 40,
+        "rooms_for_guests": 10
+    }
+]
