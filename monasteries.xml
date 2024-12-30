@@ -41,7 +41,7 @@
     манастир-->
     <monastery id="m3">
       <name>Троянски манастир</name>
-      <picture src="images/troyanski.jpg" />
+      <picture src="images/troqnski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c7" />
       </monastery-churches>
