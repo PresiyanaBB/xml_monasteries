@@ -10,6 +10,7 @@
   манастир-->
     <monastery id="m1">
       <name>Рилски манастир</name>
+      <picture src="images/rilski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c1" />
         <monastery-church church-id="c2" />
@@ -25,6 +26,7 @@
     манастир-->
     <monastery id="m2">
       <name>Бачковски манастир</name>
+      <picture src="images/bachkovski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c4" />
         <monastery-church church-id="c5" />
@@ -40,6 +42,7 @@
     манастир-->
     <monastery id="m3">
       <name>Троянски манастир</name>
+      <picture src="images/troyanski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c7" />
       </monastery-churches>
@@ -53,6 +56,7 @@
     манастир-->
     <monastery id="m4">
       <name>Зографски манастир</name>
+      <picture src="images/zografski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c8" />
         <monastery-church church-id="c9" />
@@ -68,6 +72,7 @@
     манастир-->
     <monastery id="m5">
       <name>Клисурски манастир</name>
+      <picture src="images/klisurski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c11" />
       </monastery-churches>
@@ -81,6 +86,7 @@
     манастир-->
     <monastery id="m6">
       <name>Черепишки манастир</name>
+      <picture src="images/cherepishki.jpg" />
       <monastery-churches>
         <monastery-church church-id="c12" />
       </monastery-churches>
@@ -94,6 +100,7 @@
     манастир-->
     <monastery id="m7">
       <name>Гложенски манастир</name>
+      <picture src="images/glozhenski.jpg" />
       <monastery-churches>
         <monastery-church church-id="c13" />
       </monastery-churches>

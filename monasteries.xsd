@@ -9,6 +9,11 @@
     </xs:simpleType>
 
     <xs:element name="name" type="xs:string" />
+    <xs:element name="picture">
+        <xs:complexType>
+            <xs:attribute name="src" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
     <xs:element name="area-in-sq-meters" type="uint" />
     <xs:element name="properties-count" type="uint" />
     <xs:element name="rooms-for-guests" type="uint" />
@@ -82,6 +87,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="name" />
+                <xs:element ref="picture" minOccurs="1" maxOccurs="1" />
                 <xs:element ref="monastery-churches" minOccurs="1" maxOccurs="1" />
                 <xs:element ref="monastery-region" minOccurs="1" maxOccurs="1" />
                 <xs:element ref="area-in-sq-meters" minOccurs="1" maxOccurs="1" />
