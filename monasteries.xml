@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- <?xml-stylesheet type = "text/xsl" href = "monasteries_test.xsd"?> -->
+<?xml-stylesheet type = "text/xsl" href = "monasteries.xslt"?>
 
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:nonamespaceSchemaLocation="monasteries.xsd">
+  xsi:noNamespaceSchemaLocation="monasteries.xsd">
 
-  <!--Рилски
-  манастир-->
   <monasteries>
+    <!--Рилски
+  манастир-->
     <monastery id="m1">
       <name>Рилски манастир</name>
       <monastery-churches>
-        <churches>
-          <church id="c1" />
-          <church id="c2" />
-          <church id="c3" />
-        </churches>
+        <monastery-church church-id="c1" />
+        <monastery-church church-id="c2" />
+        <monastery-church church-id="c3" />
       </monastery-churches>
-      <region id="r1" />
+      <monastery-region region-id="r1" />
       <area-in-sq-meters>8800</area-in-sq-meters>
       <properties-count>120</properties-count>
       <rooms-for-guests>50</rooms-for-guests>
@@ -28,11 +26,11 @@
     <monastery id="m2">
       <name>Бачковски манастир</name>
       <monastery-churches>
-        <church id="c4" />
-        <church id="c5" />
-        <church id="c6" />
+        <monastery-church church-id="c4" />
+        <monastery-church church-id="c5" />
+        <monastery-church church-id="c6" />
       </monastery-churches>
-      <region id="r2" />
+      <monastery-region region-id="r2" />
       <area-in-sq-meters>8000</area-in-sq-meters>
       <properties-count>100</properties-count>
       <rooms-for-guests>20</rooms-for-guests>
@@ -43,9 +41,9 @@
     <monastery id="m3">
       <name>Троянски манастир</name>
       <monastery-churches>
-        <church id="c7" />
+        <monastery-church church-id="c7" />
       </monastery-churches>
-      <region id="r3" />
+      <monastery-region region-id="r3" />
       <area-in-sq-meters>4200</area-in-sq-meters>
       <properties-count>85</properties-count>
       <rooms-for-guests>15</rooms-for-guests>
@@ -56,11 +54,11 @@
     <monastery id="m4">
       <name>Зографски манастир</name>
       <monastery-churches>
-        <church id="c8" />
-        <church id="c9" />
-        <church id="c10" />
+        <monastery-church church-id="c8" />
+        <monastery-church church-id="c9" />
+        <monastery-church church-id="c10" />
       </monastery-churches>
-      <region id="r4" />
+      <monastery-region region-id="r4" />
       <area-in-sq-meters>12000</area-in-sq-meters>
       <properties-count>150</properties-count>
       <rooms-for-guests>20</rooms-for-guests>
@@ -71,9 +69,9 @@
     <monastery id="m5">
       <name>Клисурски манастир</name>
       <monastery-churches>
-        <church id="c11" />
+        <monastery-church church-id="c11" />
       </monastery-churches>
-      <region id="r5" />
+      <monastery-region region-id="r5" />
       <area-in-sq-meters>5000</area-in-sq-meters>
       <properties-count>50</properties-count>
       <rooms-for-guests>20</rooms-for-guests>
@@ -84,9 +82,9 @@
     <monastery id="m6">
       <name>Черепишки манастир</name>
       <monastery-churches>
-        <church id="c12" />
+        <monastery-church church-id="c12" />
       </monastery-churches>
-      <region id="r5" />
+      <monastery-region region-id="r5" />
       <area-in-sq-meters>4000</area-in-sq-meters>
       <properties-count>60</properties-count>
       <rooms-for-guests>15</rooms-for-guests>
@@ -97,9 +95,9 @@
     <monastery id="m7">
       <name>Гложенски манастир</name>
       <monastery-churches>
-        <church id="c13" />
+        <monastery-church church-id="c13" />
       </monastery-churches>
-      <region id="r3" />
+      <monastery-region region-id="r3" />
       <area-in-sq-meters>4000</area-in-sq-meters>
       <properties-count>40</properties-count>
       <rooms-for-guests>10</rooms-for-guests>
@@ -108,67 +106,67 @@
   </monasteries>
 
   <churches>
-    <church id="c1" monastery_id="m1">
+    <church id="c1" monastery-id="m1">
       <name>
         "Рождество Богородично"
       </name>
     </church>
-    <church id="c2" monastery_id="m1">
+    <church id="c2" monastery-id="m1">
       <name>
         "Въведение Богородично"
       </name>
     </church>
-    <church id="c3" monastery_id="m1">
+    <church id="c3" monastery-id="m1">
       <name>
         "Свети Иван Рилски"
       </name>
     </church>
-    <church id="c4" monastery_id="m2">
+    <church id="c4" monastery-id="m2">
       <name>
         "Света Богородица"
       </name>
     </church>
-    <church id="c5" monastery_id="m2">
+    <church id="c5" monastery-id="m2">
       <name>
         "Свети Архангели"
       </name>
     </church>
-    <church id="c6" monastery_id="m2">
+    <church id="c6" monastery-id="m2">
       <name>
         "Свети Никола"
       </name>
     </church>
-    <church id="c7" monastery_id="m3">
+    <church id="c7" monastery-id="m3">
       <name>
         "Успение Богородично"
       </name>
     </church>
-    <church id="c8" monastery_id="m4">
+    <church id="c8" monastery-id="m4">
       <name>
         "Свети Георги"
       </name>
     </church>
-    <church id="c9" monastery_id="m4">
+    <church id="c9" monastery-id="m4">
       <name>
         "Свети Кирил и Методий"
       </name>
     </church>
-    <church id="c10" monastery_id="m4">
+    <church id="c10" monastery-id="m4">
       <name>
         "Успение Богородично"
       </name>
     </church>
-    <church id="c11" monastery_id="m5">
+    <church id="c11" monastery-id="m5">
       <name>
         "Свети Равноапостоли Кирил и Методий"
       </name>
     </church>
-    <church id="c12" monastery_id="m6">
+    <church id="c12" monastery-id="m6">
       <name>
         "Свети Георги"
       </name>
     </church>
-    <church id="c13" monastery_id="m7">
+    <church id="c13" monastery-id="m7">
       <name>
         "Свети Георги Победоносец"
       </name>
@@ -176,27 +174,27 @@
   </churches>
 
   <regions>
-    <region id="1">
+    <region id="r1">
       <name>
         "Кюстендил"
       </name>
     </region>
-    <region id="2">
+    <region id="r2">
       <name>
         "Пловдив"
       </name>
     </region>
-    <region id="3">
+    <region id="r3">
       <name>
         "Ловеч"
       </name>
     </region>
-    <region id="4">
+    <region id="r4">
       <name>
         "Атон, Гърция"
       </name>
     </region>
-    <region id="5">
+    <region id="r5">
       <name>
         "Враца"
       </name>

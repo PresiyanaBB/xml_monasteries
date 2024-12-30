@@ -1,92 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xs1="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- Simple Type for Positive Integers -->
-    <xs:simpleType name="PositiveInteger">
+    <!-- simple types -->
+    <xs:simpleType name="uint">
         <xs:restriction base="xs:int">
             <xs:minInclusive value="0" />
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Complex Type for Region -->
-    <xs:complexType name="RegionType">
-        <xs:sequence>
-            <xs:element name="Id" type="xs:int" />
-            <xs:element name="Name" type="xs:string" />
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="name" type="xs:string" />
+    <xs:element name="area-in-sq-meters" type="uint" />
+    <xs:element name="properties-count" type="uint" />
+    <xs:element name="rooms-for-guests" type="uint" />
 
-    <!-- Complex Type for Monastery -->
-    <xs:complexType name="MonasteryType">
-        <xs:sequence>
-            <xs:element name="Id" type="xs:int" />
-            <xs:element name="Name" type="xs:string" />
-            <xs:element name="RegionId" type="xs:int" />
-            <xs:element name="SizeInSqMeters" type="PositiveInteger" />
-            <xs:element name="PropertiesCount" type="PositiveInteger" />
-            <xs:element name="RoomsForGuests" type="PositiveInteger" />
-        </xs:sequence>
-    </xs:complexType>
+    <!-- region -->
 
-    <!-- Complex Type for Church -->
-    <xs:complexType name="ChurchType">
-        <xs:sequence>
-            <xs:element name="Id" type="xs:int" />
-            <xs:element name="MonasteryId" type="xs:int" />
-            <xs:element name="Name" type="xs:string" />
-        </xs:sequence>
-    </xs:complexType>
-
-    <!-- Define the Catalog element -->
-    <xs:element name="Catalog">
+    <xs:element name="region">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Monasteries">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Monastery" maxOccurs="unbounded" type="MonasteryType" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="name" />
+            </xs:sequence>
+            <xs:attribute name="id" use="required" type="xs:ID" />
+        </xs:complexType>
+    </xs:element>
 
-                <xs:element name="Churches">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Church" maxOccurs="unbounded" type="ChurchType" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+    <!-- monastery-region -->
+    <xs:element name="monastery-region">
+        <xs:complexType>
+            <xs:attribute name="region-id" use="required" type="xs:IDREF" />
+        </xs:complexType>
+    </xs:element>
 
-                <xs:element name="Regions">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Region" maxOccurs="unbounded" type="RegionType" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+    <!-- regions -->
+    <xs:element name="regions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="region" minOccurs="1" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
-
-        <!-- Define Keys for Referential Integrity -->
-        <xs:key name="MonasteryKey">
-            <xs:selector xpath="Monasteries/Monastery" />
-            <xs:field xpath="Id" />
-        </xs:key>
-
-        <xs:key name="RegionKey">
-            <xs:selector xpath="Regions/Region" />
-            <xs:field xpath="Id" />
-        </xs:key>
-
-        <xs:keyref name="MonasteryRegionKeyRef" refer="RegionKey">
-            <xs:selector xpath="Monasteries/Monastery" />
-            <xs:field xpath="RegionId" />
-        </xs:keyref>
-
-        <xs:keyref name="ChurchMonasteryKeyRef" refer="MonasteryKey">
-            <xs:selector xpath="Churches/Church" />
-            <xs:field xpath="MonasteryId" />
-        </xs:keyref>
     </xs:element>
+
+
+    <!-- church -->
+    <xs:element name="church">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" />
+            </xs:sequence>
+            <xs:attribute name="id" use="required" type="xs:ID" />
+            <xs:attribute name="monastery-id" use="required" type="xs:IDREF" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- monastery-church -->
+    <xs:element name="monastery-church">
+        <xs:complexType>
+            <xs:attribute name="church-id" use="required" type="xs:IDREF" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- churches -->
+    <xs:element name="churches">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="church" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- monastery churches -->
+    <xs:element name="monastery-churches">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="monastery-church" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- monastery -->
+    <xs:element name="monastery">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name" />
+                <xs:element ref="monastery-churches" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="monastery-region" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="area-in-sq-meters" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="properties-count" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="rooms-for-guests" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="id" use="required" type="xs:ID" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- monasteries -->
+    <xs:element name="monasteries">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="monastery" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- catalog -->
+    <xs:element name="catalog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="monasteries" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="churches" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="regions" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
 </xs:schema>
