@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" />
+
+    <xsl:param name="sort-by" select="'name'" />
+    <xsl:param name="data-type" select="'text'" />
+    <xsl:param name="order" select="'ascending'" />
+
     <xsl:template match="/">
         <html>
             <head>
                 <title>Monasteries</title>
                 <link rel="stylesheet" type="text/css" href="monasteries.css" />
+                <script src="monasteries.js" defer=""></script>
             </head>
-            <body>
+            <body id="monasteries-container">
                 <header>
                     <h1>Манастири</h1>
                 </header>
+                <div class="sort-buttons-container">
+                    <button id="name-button">Име</button>
+                    <button id="area-button">Площ</button>
+                    <button id="properties-button">Брой имоти</button>
+                    <button id="guest-rooms-button">Брой стаи за гости</button>
+                </div>
                 <div class="page-container">
                     <div class="container">
-                        <xsl:apply-templates select="catalog/monasteries/monastery" />
+                        <xsl:apply-templates select="catalog/monasteries/monastery">
+                            <xsl:sort select="*[name() = $sort-by]" data-type="{$data-type}"
+                                order="{$order}" />
+                        </xsl:apply-templates>
                     </div>
                 </div>
             </body>
