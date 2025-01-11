@@ -17,6 +17,10 @@
                 <header>
                     <h1>Манастири</h1>
                 </header>
+                <div class="page-container">
+                    <h3>Сортиране по:
+                    </h3>
+                </div>
                 <div class="sort-buttons-container">
                     <button id="name-button">Име</button>
                     <button id="area-button">Площ</button>
