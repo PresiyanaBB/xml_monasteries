@@ -78,15 +78,19 @@
     </xsl:template>
 
     <xsl:template match="picture">
-        <img class="picture">
+        <img>
             <xsl:attribute name="src">
+                <xsl:text>images/</xsl:text>
                 <xsl:value-of select="@src" />
+                <xsl:text>.jpg</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="alt">
-                <xsl:value-of select="name" />
+                <xsl:value-of select="../name" />
             </xsl:attribute>
         </img>
     </xsl:template>
+
+
     <xsl:template match="area-in-sq-meters">
         <p>Площ: <xsl:value-of select="." /> кв.м.</p>
     </xsl:template>

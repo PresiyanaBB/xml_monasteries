@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="monasteries.xslt"?>
+<!DOCTYPE catalog SYSTEM "monasteries.dtd" [
+  <!ENTITY rilski SYSTEM "images/rilski.jpg" NDATA jpeg>
+  <!ENTITY bachkovski SYSTEM "images/bachkovski.jpg" NDATA jpg>
+  <!ENTITY troqnski SYSTEM "images/troqnski.jpg" NDATA jpg>
+  <!ENTITY zografski SYSTEM "images/zografski.jpg" NDATA jpg>
+  <!ENTITY klisurski SYSTEM "images/klisurski.jpg" NDATA jpg>
+  <!ENTITY cherepishki SYSTEM "images/cherepishki.jpg" NDATA jpg>
+  <!ENTITY glojenski SYSTEM "images/glojenski.jpg" NDATA jpg>
+]>
 
+<?xml-stylesheet type="text/xsl" href="monasteries.xslt"?>
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="monasteries.xsd">
 
@@ -9,7 +18,7 @@
   манастир-->
     <monastery id="m1">
       <name>Рилски манастир</name>
-      <picture src="images/rilski.jpg" />
+      <picture src="rilski" />
       <monastery-churches>
         <monastery-church church-id="c1" />
         <monastery-church church-id="c2" />
@@ -25,7 +34,7 @@
     манастир-->
     <monastery id="m2">
       <name>Бачковски манастир</name>
-      <picture src="images/bachkovski.jpg" />
+      <picture src="bachkovski" />
       <monastery-churches>
         <monastery-church church-id="c4" />
         <monastery-church church-id="c5" />
@@ -41,7 +50,7 @@
     манастир-->
     <monastery id="m3">
       <name>Троянски манастир</name>
-      <picture src="images/troqnski.jpg" />
+      <picture src="troqnski" />
       <monastery-churches>
         <monastery-church church-id="c7" />
       </monastery-churches>
@@ -55,7 +64,7 @@
     манастир-->
     <monastery id="m4">
       <name>Зографски манастир</name>
-      <picture src="images/zografski.jpg" />
+      <picture src="zografski" />
       <monastery-churches>
         <monastery-church church-id="c8" />
         <monastery-church church-id="c9" />
@@ -71,7 +80,7 @@
     манастир-->
     <monastery id="m5">
       <name>Клисурски манастир</name>
-      <picture src="images/klisurski.jpg" />
+      <picture src="klisurski" />
       <monastery-churches>
         <monastery-church church-id="c11" />
       </monastery-churches>
@@ -85,7 +94,7 @@
     манастир-->
     <monastery id="m6">
       <name>Черепишки манастир</name>
-      <picture src="images/cherepishki.jpg" />
+      <picture src="cherepishki" />
       <monastery-churches>
         <monastery-church church-id="c12" />
       </monastery-churches>
@@ -99,7 +108,7 @@
     манастир-->
     <monastery id="m7">
       <name>Гложенски манастир</name>
-      <picture src="images/glojenski.jpg" />
+      <picture src="glojenski" />
       <monastery-churches>
         <monastery-church church-id="c13" />
       </monastery-churches>
@@ -114,67 +123,67 @@
   <churches>
     <church id="c1" monastery-id="m1">
       <name>
-        "Рождество Богородично"
+  "Рождество Богородично"
       </name>
     </church>
     <church id="c2" monastery-id="m1">
       <name>
-        "Въведение Богородично"
+  "Въведение Богородично"
       </name>
     </church>
     <church id="c3" monastery-id="m1">
       <name>
-        "Свети Иван Рилски"
+  "Свети Иван Рилски"
       </name>
     </church>
     <church id="c4" monastery-id="m2">
       <name>
-        "Света Богородица"
+  "Света Богородица"
       </name>
     </church>
     <church id="c5" monastery-id="m2">
       <name>
-        "Свети Архангели"
+  "Свети Архангели"
       </name>
     </church>
     <church id="c6" monastery-id="m2">
       <name>
-        "Свети Никола"
+  "Свети Никола"
       </name>
     </church>
     <church id="c7" monastery-id="m3">
       <name>
-        "Успение Богородично"
+  "Успение Богородично"
       </name>
     </church>
     <church id="c8" monastery-id="m4">
       <name>
-        "Свети Георги"
+  "Свети Георги"
       </name>
     </church>
     <church id="c9" monastery-id="m4">
       <name>
-        "Свети Кирил и Методий"
+  "Свети Кирил и Методий"
       </name>
     </church>
     <church id="c10" monastery-id="m4">
       <name>
-        "Успение Богородично"
+  "Успение Богородично"
       </name>
     </church>
     <church id="c11" monastery-id="m5">
       <name>
-        "Свети Равноапостоли Кирил и Методий"
+  "Свети Равноапостоли Кирил и Методий"
       </name>
     </church>
     <church id="c12" monastery-id="m6">
       <name>
-        "Свети Георги"
+  "Свети Георги"
       </name>
     </church>
     <church id="c13" monastery-id="m7">
       <name>
-        "Свети Георги Победоносец"
+  "Свети Георги Победоносец"
       </name>
     </church>
   </churches>
@@ -182,27 +191,27 @@
   <regions>
     <region id="r1">
       <name>
-        Кюстендил
+  Кюстендил
       </name>
     </region>
     <region id="r2">
       <name>
-        Пловдив
+  Пловдив
       </name>
     </region>
     <region id="r3">
       <name>
-        Ловеч
+  Ловеч
       </name>
     </region>
     <region id="r4">
       <name>
-        Атон, Гърция
+  Атон, Гърция
       </name>
     </region>
     <region id="r5">
       <name>
-        Враца
+  Враца
       </name>
     </region>
   </regions>

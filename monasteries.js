@@ -21,41 +21,23 @@ function applyTransformation(sortBy, dataType, order) {
     if (xhr.status === 200) {
       const xsltProcessor = new XSLTProcessor();
       const parser = new DOMParser();
-      const xslDoc = parser.parseFromString(
-        xhr.responseText,
-        "application/xml"
-      );
+      const xslDoc = parser.parseFromString(xhr.responseText, "application/xml");
       xsltProcessor.importStylesheet(xslDoc);
 
-      // Add sorting parameters
-      const sortParams = {
-        "sort-by": sortBy,
-        "data-type": dataType,
-        order: order,
-      };
-      for (const [key, value] of Object.entries(sortParams)) {
-        xsltProcessor.setParameter(null, key, value);
-      }
-
-      const xmlDoc = document.implementation.createDocument("", "", null);
-      const monasteriesContainer = document.getElementById(
-        "monasteries-container"
-      );
+      xsltProcessor.setParameter(null, "sort-by", sortBy);
+      xsltProcessor.setParameter(null, "data-type", dataType);
+      xsltProcessor.setParameter(null, "order", order);
 
       const xmlXhr = new XMLHttpRequest();
       xmlXhr.open("GET", "monasteries.xml", true);
       xmlXhr.onload = () => {
         if (xmlXhr.status === 200) {
-          const catalogDoc = parser.parseFromString(
-            xmlXhr.responseText,
-            "application/xml"
-          );
-          const resultDocument = xsltProcessor.transformToFragment(
-            catalogDoc,
-            document
-          );
+          const xmlDoc = parser.parseFromString(xmlXhr.responseText, "application/xml");
+          const resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
+
+          const monasteriesContainer = document.getElementById("monasteries-container");
           monasteriesContainer.innerHTML = "";
-          monasteriesContainer.appendChild(resultDocument);
+          monasteriesContainer.appendChild(resultFragment);
         }
       };
       xmlXhr.send();

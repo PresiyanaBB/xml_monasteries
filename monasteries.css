@@ -75,6 +75,14 @@ body {
   margin-left: 0px;
 }
 
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-left: 0px;
+}
+
 header {
   background-color: #4caf50;
   color: white;

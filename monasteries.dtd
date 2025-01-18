@@ -1,0 +1,37 @@
+<!NOTATION jpg SYSTEM "image/jpg">
+<!NOTATION jpeg SYSTEM "image/jpeg">
+<!ATTLIST catalog xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+<!ATTLIST catalog xsi:noNamespaceSchemaLocation CDATA #FIXED "monasteries.xsd">
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT picture EMPTY>
+<!ATTLIST picture src CDATA #REQUIRED>
+<!ELEMENT area-in-sq-meters (#PCDATA)>
+<!ELEMENT properties-count (#PCDATA)>
+<!ELEMENT rooms-for-guests (#PCDATA)>
+
+<!ELEMENT region (name)>
+<!ATTLIST region id ID #REQUIRED>
+
+<!ELEMENT monastery-region EMPTY>
+<!ATTLIST monastery-region region-id IDREF #REQUIRED>
+
+<!ELEMENT regions (region+)>
+
+<!ELEMENT church (name)>
+<!ATTLIST church
+    id ID #REQUIRED
+    monastery-id IDREF #REQUIRED>
+
+<!ELEMENT monastery-church EMPTY>
+<!ATTLIST monastery-church church-id IDREF #REQUIRED>
+
+<!ELEMENT churches (church+)>
+<!ELEMENT monastery-churches (monastery-church+)>
+
+<!ELEMENT monastery (name, picture, monastery-churches, monastery-region, area-in-sq-meters, properties-count, rooms-for-guests)>
+<!ATTLIST monastery id ID #REQUIRED>
+
+<!ELEMENT monasteries (monastery+)>
+
+<!ELEMENT catalog (monasteries, churches, regions)>
