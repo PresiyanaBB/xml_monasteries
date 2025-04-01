@@ -1,3 +1,3 @@
 # xml_monasteries
 
-todo: DTD + entities
+XML project for the most famous monasteries to visit.
